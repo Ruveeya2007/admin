@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Cpu, Sun, Moon, Sparkles, Terminal, Activity, Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import { Cpu, Sun, Moon, Sparkles, Terminal, Activity, Menu, X, Play } from 'lucide-react';
 
 export default function Navbar({ currentTheme, onSelectTheme, onOpenModal, onTriggerToast }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,6 +40,16 @@ export default function Navbar({ currentTheme, onSelectTheme, onOpenModal, onTri
             <div className="theme-picker" role="radiogroup" aria-label="Theme Selection">
               <button
                 type="button"
+                className={`theme-pill ${currentTheme === 'green' ? 'active' : ''}`}
+                onClick={() => onSelectTheme('green')}
+                title="Green & White Theme"
+                aria-label="Green & White Theme"
+              >
+                <Sparkles size={14} />
+                <span className="hide-mobile">Green</span>
+              </button>
+              <button
+                type="button"
                 className={`theme-pill ${currentTheme === 'dark' ? 'active' : ''}`}
                 onClick={() => onSelectTheme('dark')}
                 title="Dark Mode"
@@ -60,16 +70,6 @@ export default function Navbar({ currentTheme, onSelectTheme, onOpenModal, onTri
               </button>
               <button
                 type="button"
-                className={`theme-pill ${currentTheme === 'cyberpunk' ? 'active' : ''}`}
-                onClick={() => onSelectTheme('cyberpunk')}
-                title="Cyberpunk Neon"
-                aria-label="Cyberpunk Neon Theme"
-              >
-                <Sparkles size={14} />
-                <span className="hide-mobile">Neon</span>
-              </button>
-              <button
-                type="button"
                 className={`theme-pill ${currentTheme === 'light' ? 'active' : ''}`}
                 onClick={() => onSelectTheme('light')}
                 title="Light Mode"
@@ -79,6 +79,19 @@ export default function Navbar({ currentTheme, onSelectTheme, onOpenModal, onTri
                 <span className="hide-mobile">Light</span>
               </button>
             </div>
+
+            {/* Watch Tour Modal CTA */}
+            <button
+              id="nav-tour-btn"
+              type="button"
+              className="btn btn-secondary"
+              style={{ padding: '8px 14px', fontSize: '0.85rem' }}
+              onClick={onOpenModal}
+              title="Watch 60s Tour"
+            >
+              <Play size={14} style={{ fill: 'currentColor' }} />
+              <span className="hide-mobile">Tour</span>
+            </button>
 
             {/* Launch Console CTA */}
             <button

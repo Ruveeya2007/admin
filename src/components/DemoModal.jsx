@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, Play, CheckCircle2, ArrowRight, ShieldCheck, Zap, Server, Activity } from 'lucide-react';
+import { useState } from 'react';
+import { X, Zap, ArrowRight } from 'lucide-react';
 
 const TOUR_STEPS = [
   {
@@ -154,7 +154,7 @@ export default function DemoModal({ isOpen, onClose, onTriggerToast }) {
                 style={{
                   padding: '10px 14px',
                   borderRadius: '10px',
-                  background: currentStep === idx ? 'rgba(139, 92, 246, 0.15)' : 'var(--bg-tertiary)',
+                  background: currentStep === idx ? 'rgba(16, 185, 129, 0.15)' : 'var(--bg-tertiary)',
                   border: `1px solid ${currentStep === idx ? 'var(--accent-primary)' : 'var(--border-subtle)'}`,
                   cursor: 'pointer',
                   transition: 'all 0.2s ease'

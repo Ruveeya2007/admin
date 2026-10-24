@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Cpu, ArrowRight, ShieldCheck, Github, Twitter, Disc as Discord, Globe, Send, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Cpu, ArrowRight, ShieldCheck, Send, CheckCircle2 } from 'lucide-react';
 
 export default function Footer({ onTriggerToast }) {
   const [email, setEmail] = useState('');
@@ -123,32 +123,39 @@ export default function Footer({ onTriggerToast }) {
                 Bi-weekly technical whitepapers on distributed LLM scheduling and GPU virtualization.
               </p>
 
-              <form onSubmit={handleSubscribe} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <input
-                  type="email"
-                  placeholder="engineer@company.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  style={{
-                    background: 'var(--bg-tertiary)',
-                    border: '1px solid var(--border-subtle)',
-                    padding: '10px 14px',
-                    borderRadius: '10px',
-                    color: 'var(--text-primary)',
-                    fontSize: '0.875rem',
-                    outline: 'none'
-                  }}
-                  required
-                />
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  style={{ padding: '8px 16px', fontSize: '0.85rem' }}
-                >
-                  <Send size={14} />
-                  <span>Subscribe to Research</span>
-                </button>
-              </form>
+              {isSubscribed ? (
+                <div style={{ padding: '12px', borderRadius: '10px', background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', color: 'var(--accent-emerald)', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.875rem' }}>
+                  <CheckCircle2 size={16} />
+                  <span>Subscribed to research briefings!</span>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <input
+                    type="email"
+                    placeholder="engineer@company.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    style={{
+                      background: 'var(--bg-tertiary)',
+                      border: '1px solid var(--border-subtle)',
+                      padding: '10px 14px',
+                      borderRadius: '10px',
+                      color: 'var(--text-primary)',
+                      fontSize: '0.875rem',
+                      outline: 'none'
+                    }}
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    style={{ padding: '8px 16px', fontSize: '0.85rem' }}
+                  >
+                    <Send size={14} />
+                    <span>Subscribe to Research</span>
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 

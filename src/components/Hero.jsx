@@ -1,5 +1,4 @@
-import React from 'react';
-import { Play, Sparkles, ArrowRight, ShieldCheck, Zap, Server, Globe2, Gauge } from 'lucide-react';
+import { Play, Sparkles, ArrowRight, Zap, Globe2 } from 'lucide-react';
 
 export default function Hero({ onOpenModal, onTriggerToast }) {
   const scrollToDemo = () => {

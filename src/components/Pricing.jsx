@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Check, Zap, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export default function Pricing({ onOpenModal, onTriggerToast }) {

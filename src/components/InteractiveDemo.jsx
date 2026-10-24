@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
-  Terminal, Activity, GitFork, Calculator, Play, Copy, RefreshCw,
-  CheckCircle2, AlertTriangle, ShieldCheck, Zap, Server, Cpu, Database,
-  ArrowRight, Sliders, Layers, Sparkles
+  Terminal, Activity, GitFork, Calculator, Play, Copy,
+  CheckCircle2, ShieldCheck, Zap, Server, Cpu, Database,
+  ArrowRight, Layers, Sparkles
 } from 'lucide-react';
 
 const PRESETS = [

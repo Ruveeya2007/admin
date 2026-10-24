@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Star, CheckCircle, Quote, TrendingUp, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { Star, CheckCircle, TrendingUp, Sparkles } from 'lucide-react';
 
 const TESTIMONIALS = [
   {

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
-  Globe2, Bot, Shield, Eye, Cpu, Terminal, CheckCircle2,
-  Copy, ArrowRight, Zap, Lock, Sparkles
+  Globe2, Bot, Shield, Eye, Cpu, Terminal,
+  Copy, Zap, Sparkles
 } from 'lucide-react';
 
 const FEATURES = [
@@ -81,7 +81,7 @@ export default function Features({ onTriggerToast }) {
 
         {/* Feature Cards Grid */}
         <div className="features-grid">
-          {FEATURES.map((feat, index) => {
+          {FEATURES.map((feat) => {
             const Icon = feat.icon;
             return (
               <div

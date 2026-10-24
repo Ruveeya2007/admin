@@ -1,7 +1,6 @@
-import React from 'react';
-import { Sparkles, CheckCircle, Info } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
-export default function Toast({ toasts, onDismiss }) {
+export default function Toast({ toasts }) {
   if (!toasts || toasts.length === 0) return null;
 
   return (
